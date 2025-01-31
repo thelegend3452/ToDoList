@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="index2.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+</head>
+<body>
+ 
+    <header>
+        <button class ="menu-toggle" aria-label="Toggle Menu">
+            <span class="Hamburger"></span>
+        </button>
+
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Min Portfølje</h1>
+            </div>
+           
+            <ul class="nav-links">
+                <li><a href="#meg">Om meg</a></li>
+                <li><a href="#work">Prosjekter</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <section id="meg" class="meg">
+        <h1>Hei, Jeg heter Asmaar</h1>
+        <p>
+            Student på HK
+            <br>
+            Jeg studerer webdesign, og utvikling av forskjellige programmer
+        </p>
+        <h2>Om meg</h2>
+        <p>
+            Jeg er en student som lærer om webdesign og utvikling av programmer.
+            Jeg har alltid hatt lyst å kode, og er veldig glad i det.
+        </p>
+    </section>
+     
+    <section id="work" class="work">
+        <h2>Mine Prosjekter</h2>
+        <div class="project-gallery">
+            <div class="project-frame">
+                <a href="https://marvelrivals2testing.netlify.app/">Marvel Rivals</a>
+                <h3>Click to get more Info
+                    <br>
+                    This is a page i made with HTML,CSS and JS. 
+                </h3>
+            </div>
+            <div class="project-frame">
+                <a href="https://github.com/thelegend3452">Github</a>
+                <h3>In this project i worked with Python</h3>
+            </div>
+            <div class="project-frame">
+                <a href="project.html#project3">
+                    <a href="https://www.google.com">Google</a>
+                </a>
+                <h3>In this project i worked with Java </h3>
+            </div>
+            
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <h2>Kontakt meg</h2>
+        <p>Ta gjerne kontakt for samarbeid eller bare en hyggelig prat.</p>
+        <form action="submit_form.php" method="post">
+            <input type="text" name="name" placeholder="Fornavn Etternavn" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" rows="5" placeholder="Meldingen din" required></textarea>
+            <button type="submit">Send melding</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Asmaar Abid. All rights reserved.</p>
+    </footer>
+
+    <script src="/Portfolio/index.js"></script>
+</body>
+</html>

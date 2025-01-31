@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono';
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    color: black;
+}
+
+header {
+    background-color: black;
+    box-shadow: rgba(4, 0, 0, 1);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links li a:hover {
+    color: #ff9800;
+}
+
+.meg {
+    height: 100vh;
+    background: linear-gradient(rgb(16, 26, 73), rgba(14, 165, 233));
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    
+}
+
+.meg h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+.meg h2{
+    margin-top: 100px;
+    letter-spacing: 1px;
+    
+}
+
+.meg p {
+    font-size: 24px;
+}
+
+.about {
+    padding: 60px 20px;
+    background: linear-gradient(rgba(4, 0, 0, 0.5), rgba(4, 0, 0 ,1));
+    color:white;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 36px;
+    gap:inherit;
+    
+}
+
+.about p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.work  {
+    padding: 60px 20px;
+    text-align: center;
+    background-image: url("/Portfolio/images/coding2.avif");
+}
+
+
+.work h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color:white;
+}
+
+.project-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.project-frame {
+    margin: 15px;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    
+}
+
+.project-frame h3 {
+    margin-top: 10px;
+    
+}
+    
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(rgba(104, 103, 103, 0.5), rgba(250,249,249, 1));
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.contact p{
+    padding:15px;
+}
+
+.contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input, .contact textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.contact button:hover {
+    background-color: #ff9800;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+.project-frame:hover{
+    transform: scale(1.05);
+
+}
+
+#meg h1,
+#meg h2,
+#meg p,
+#work .project-frame
+{
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+}
+
+
+.animate__animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-toggle .hamburger {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: black; 
+        position: absolute;
+        top: 60px; 
+        left: 0;
+    }
+        .nav-links li {
+            margin: 10px 0; 
+            text-align: center; 
+        }
+    
+        .nav-links li a {
+            padding: 10px; 
+            display: block; 
+        }
+    
+        .nav-links li a:hover {
+            background-color: #333; 
+            color: #ff9800; 
+        }
+    
+}
