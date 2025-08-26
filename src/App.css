@@ -1,0 +1,165 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(4, 200, 249);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: rgb(4, 200, 249);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.367);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
+  backdrop-filter: blur(30px);
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.rem {
+  font-size: 1rem;
+  color: white;
+  background-color: rgb(233, 73, 67);
+  border: 1px solid rgba(255, 255, 255, 0.494);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
+  backdrop-filter: blur(30px);
+  padding: 5px;
+  display: inline-block;
+}
+
+.remaning {
+  color: black;
+}
+
+.comp {
+  font-size: 1rem;
+  color: white;
+  background-color: rgb(41, 244, 34);
+  border: 1px solid rgba(255, 255, 255, 0.367);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
+  backdrop-filter: blur(30px);
+  display: inline-block;
+  margin-left: 25%;
+  padding: 5px;
+}
+.completed {
+  color: black;
+}
+
+
+input[type="text"] {
+  width: 70%;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
+  backdrop-filter: blur(20px);
+  font-size: 16px;
+}
+input:focus {
+  outline:none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: rgb(4, 200, 249);
+  border: 1px solid rgba(255, 255, 255, 0.367);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
+  backdrop-filter: blur(30px);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.528);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.150) ;
+  backdrop-filter: blur(10px);
+}
+
+li button {
+  background-color: #bfbfbf;
+}
+
+li button:hover {
+  background-color: #c82333;
+}
+
+
+.Pbtn, .Ntbn, .Ubtn {
+  background-color: rgb(4, 200, 249);
+  padding: 0,5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.367);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
+  backdrop-filter: blur(30px);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 3px;
+
+}
+
+.Ubtn:hover{
+    background-color: #f62b02;
+}
+
+.Pbtn:hover{
+    background-color: #f0a904;
+}
+
+.Nbtn:hover{
+    background-color: #298bf3;
+}
+
+.Ubtn:active,.Pbtn:active, .Nbtn:active{
+  border: 1px solid black;
+}
+.Pbtn:focus,.Ubtn:focus, .Nbtn:focus{
+  border: 1px solid black;
+}
+
+.priority.urgent {
+  color: #f62b02
+}
+.priority{
+  color:#e3a004;
+  background-color: rgb(4, 200, 249);
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.367);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
+  backdrop-filter: blur(30px);
+  font-weight: bold;
+}
+.priority.non-urgent {
+  color: #298bf3;
+}
