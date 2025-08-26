@@ -6,7 +6,13 @@ import Todolist from "./components/Todolist";
 const App = () => {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
-  const [priority, setPriority] = useState("")
+  const [priority, setPriority] = useState("NON-URGENT")
+
+  const PriorityOrder = {
+    'URGENT': 1,
+    'PRIORITY': 2,
+    'NON-URGENT': 3
+  }
 
   const addtask = () => {
     if (input.trim() === "") return;
@@ -38,12 +44,12 @@ const App = () => {
     if (task.id === id) {
       let newPriority;
 
-      if (task.priority === "Urgent") {
-        newPriority = "Priority";
-      } else if (task.priority === "Priority") {
-        newPriority = "Non-Urgent";
+      if (task.priority === "URGENT") {
+        newPriority = "PRIORITY";
+      } else if (task.priority === "PRIORITY") {
+        newPriority = "NON-URGENT";
       } else {
-        newPriority = "Urgent";
+        newPriority = "URGENT";
       }
 
       return { ...task, priority: newPriority };
@@ -70,8 +76,14 @@ const App = () => {
         <span className="task-count">{completedCount}</span> completed
       </h2>
 
-      <Todoinput input={input} setInput={setInput} addtask={addtask} setPriority={setPriority} HandlePriority={HandlePriority}/>
-      <Todolist todos={todos} deleteTask={deletetask} togglecompleted={togglecompleted} />
+      <Todoinput input={input} setInput={setInput} addtask={addtask} setPriority={setPriority}/>
+      <Todolist todos={[...todos].sort((a, b) => {
+        if (a.completed  !== b.completed) {
+          return a.completed ? 1: -1;
+        }
+        return PriorityOrder[a.priority] - PriorityOrder[b.priority]
+      })} 
+      deleteTask={deletetask} togglecompleted={togglecompleted} HandlePriority={HandlePriority} />
     </div>
   );
 };
