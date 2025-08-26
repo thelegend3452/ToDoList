@@ -105,7 +105,8 @@ li {
 }
 
 li button {
-  background-color: #bfbfbf;
+  background-color:transparent;
+  
 }
 
 li button:hover {
