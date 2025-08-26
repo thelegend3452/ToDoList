@@ -65,11 +65,12 @@ const App = () => {
         You have <span className="remaning">{todos.length}</span>{" "}
         {todos.length === 1 ? 'task' : 'tasks'}
       </h2>
+      
       <h2 className="comp">
         <span className="task-count">{completedCount}</span> completed
       </h2>
 
-      <Todoinput input={input} setInput={setInput} addtask={addtask} setPriority={setPriority} />
+      <Todoinput input={input} setInput={setInput} addtask={addtask} setPriority={setPriority} HandlePriority={HandlePriority}/>
       <Todolist todos={todos} deleteTask={deletetask} togglecompleted={togglecompleted} />
     </div>
   );
