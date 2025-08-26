@@ -69,7 +69,7 @@ const App = () => {
         <span className="task-count">{completedCount}</span> completed
       </h2>
 
-      <Todoinput input={input} setInput={setInput} addtask={addtask} setPriority={setPriority}/>
+      <Todoinput input={input} setInput={setInput} addtask={addtask} setPriority={setPriority} />
       <Todolist todos={todos} deleteTask={deletetask} togglecompleted={togglecompleted} />
     </div>
   );

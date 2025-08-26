@@ -18,9 +18,7 @@ const Todolist = ({ todos, deleteTask, togglecompleted, HandlePriority }) => {
           </span>
 
           {}
-          <button onClick={() => HandlePriority(todo.id)}>
-            Change Priority
-          </button>
+          
         </li>
       ))}
     </ul>
