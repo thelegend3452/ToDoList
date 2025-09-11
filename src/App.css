@@ -185,6 +185,9 @@ li .top-row {
   li button:focus {
     background-color: #c82333;
   }
+  .priority {
+    margin-left: 0;
+  }
 
 }
 
