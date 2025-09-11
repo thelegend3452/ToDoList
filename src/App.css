@@ -57,6 +57,10 @@ h1 {
   padding: 8px;
 }
 
+::placeholder {
+  font-family: 'custom', 'sans-serif';
+}
+
 input[type="text"] {
   width: calc(100% - 120px);
   padding: 0.5rem;
@@ -67,6 +71,7 @@ input[type="text"] {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   backdrop-filter: blur(20px);
   font-size: 16px;
+  font-family: 'custom', sans-serif;
 }
 
 input:focus {
@@ -178,6 +183,7 @@ li .top-row {
   input[type="text"] {
     width: 100%;
     margin-bottom: 10px;
+
   }
 
   li button {
@@ -205,6 +211,9 @@ li .top-row {
   }
 
   h1{
+    font-family: 'custom', sans-serif;
+  }
+  ::placeholder {
     font-family: 'custom', sans-serif;
   }
 
