@@ -1,17 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 import Todoinput from "./components/Todoinput"
 import Todolist from "./components/Todolist";
 
 const App = () => {
   const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([]);
-  const [priority, setPriority] = useState("NON-URGENT")
+  const [todos, setTodos] = useState(() => {
+    const save_tasks = localStorage.getItem("todos");
+    return save_tasks ? JSON.parse(save_tasks) : [];
+  });
+  const [description, setDescription] = useState("")
+  const [priority, setPriority] = useState("LOW")
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  });
 
   const PriorityOrder = {
-    'URGENT': 1,
-    'PRIORITY': 2,
-    'NON-URGENT': 3
+    'HIGH': 1,
+    'MODERATE': 2,
+    'LOW': 3
   }
 
   const addtask = () => {
@@ -20,13 +28,16 @@ const App = () => {
     const newtask = {
       id: Date.now(),
       text: input,
+      description: description,
       completed: false,
       priority
     };
 
     setInput("");
     setTodos([...todos, newtask]);
+    setDescription("");
   };
+
 
   const deletetask = (id) => {
     const updatedTasks = todos.filter(task => task.id !== id);
@@ -44,12 +55,12 @@ const App = () => {
     if (task.id === id) {
       let newPriority;
 
-      if (task.priority === "URGENT") {
-        newPriority = "PRIORITY";
-      } else if (task.priority === "PRIORITY") {
-        newPriority = "NON-URGENT";
+      if (task.priority === "HIGH") {
+        newPriority = "MODERATE";
+      } else if (task.priority === "MODERATE") {
+        newPriority = "LOW";
       } else {
-        newPriority = "URGENT";
+        newPriority = "HIGH";
       }
 
       return { ...task, priority: newPriority };
@@ -76,7 +87,7 @@ const App = () => {
         <span className="task-count">{completedCount}</span> completed
       </h2>
 
-      <Todoinput input={input} setInput={setInput} addtask={addtask} setPriority={setPriority}/>
+      <Todoinput input={input} setInput={setInput} addtask={addtask} description={description} setDescription={setDescription} setPriority={setPriority}/>
       <Todolist todos={[...todos].sort((a, b) => {
         if (a.completed  !== b.completed) {
           return a.completed ? 1: -1;

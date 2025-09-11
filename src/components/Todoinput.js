@@ -1,6 +1,6 @@
 import React from "react";
 
-const Todoinput = ({input, setInput, addtask, setPriority}) => {
+const Todoinput = ({input, description, setDescription ,setInput, addtask ,setPriority}) => {
     const handleEnter = (event) => {
         if (event.key === 'Enter') {
             addtask();
@@ -16,15 +16,23 @@ const Todoinput = ({input, setInput, addtask, setPriority}) => {
                 placeholder="Task..."
                 required
             />
+            <input
+            type="text"
+            value={description}
+            onChange={(e) => setDescription (e.target.value)}
+            onKeyDown={handleEnter}
+            placeholder="Description..."
+            required
+            />
             <button onClick={addtask}>Add Task</button>
-            <button className="Ubtn" onClick={() => setPriority("URGENT")}>
-                Urgent
+            <button className="Ubtn" onClick={() => setPriority("HIGH")}>
+                High
             </button>
-            <button className="Pbtn" onClick={() => setPriority("PRIORITY")}>
-                Priority
+            <button className="Pbtn" onClick={() => setPriority("MODERATE")}>
+                Moderate
             </button>
-            <button className="Nbtn" onClick={() => setPriority("NON-URGENT")}>
-                Non-Urgent
+            <button className="Nbtn" onClick={() => setPriority("LOW")}>
+                Low
             </button>
             </div>
     )
