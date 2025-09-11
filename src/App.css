@@ -140,6 +140,7 @@ li .top-row {
   box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
   backdrop-filter: blur(30px);
   font-weight: bold;
+  margin-left: 5px;
 }
 
 .priority.high { color: #f62b02; text-align: center; }

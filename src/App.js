@@ -10,7 +10,7 @@ const App = () => {
     if (save_task) {
       return JSON.parse(save_task).map(task => ({
         ...task,
-        createdAt: new Date(task.createdAt), // convert back to Date
+        createdAt: new Date(task.createdAt),
       }));
     }
     return [];
