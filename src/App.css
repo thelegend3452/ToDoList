@@ -102,9 +102,9 @@ li button:hover {
   transition: background-color 0.3s;
 }
 
-.Ubtn:hover { background-color: #f62b02; }
-.Pbtn:hover { background-color: #f0a904; }
-.Nbtn:hover { background-color: #298bf3; }
+.Ubtn:focus { background-color: #f62b02; }
+.Pbtn:focus { background-color: #f0a904; }
+.Nbtn:focus { background-color: #298bf3; }
 
 
 ul {
@@ -182,7 +182,7 @@ li .top-row {
     font-size: 16px;
 
   }
-  li button :focus {
+  li button:focus {
     background-color: #c82333;
   }
 
