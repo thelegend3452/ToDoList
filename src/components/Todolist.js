@@ -20,7 +20,7 @@ const Todolist = ({ todos, deleteTask, togglecompleted, HandlePriority }) => {
 
 
             {}
-            <button onClick={() => HandlePriority(todo.id)}>
+            <button className="handlepriority" onClick={() => HandlePriority(todo.id)}>
               Change Priority
             </button>
             <p className="description">{`Description: ${todo.description}`}</p>
