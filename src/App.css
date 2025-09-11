@@ -182,8 +182,8 @@ li .top-row {
     font-size: 16px;
 
   }
-  .handlepriority :hover {
-    background-color: #04c8f9;
+  li button :focus {
+    background-color: #c82333;
   }
 
 }
