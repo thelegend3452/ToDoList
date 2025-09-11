@@ -6,8 +6,14 @@ import Todolist from "./components/Todolist";
 const App = () => {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState(() => {
-    const save_tasks = localStorage.getItem("todos");
-    return save_tasks ? JSON.parse(save_tasks) : [];
+    const save_task = localStorage.getItem("todos");
+    if (save_task) {
+      return JSON.parse(save_task).map(task => ({
+        ...task,
+        createdAt: new Date(task.createdAt), // convert back to Date
+      }));
+    }
+    return [];
   });
   const [description, setDescription] = useState("")
   const [priority, setPriority] = useState("LOW")
@@ -30,7 +36,8 @@ const App = () => {
       text: input,
       description: description,
       completed: false,
-      priority
+      priority,
+      createdAt: new Date(),
     };
 
     setInput("");
