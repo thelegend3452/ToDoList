@@ -188,9 +188,17 @@ li .top-row {
   .priority {
     margin-left: 0;
   }
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgb(4, 200, 249);
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    backdrop-filter: blur(30px);
+  }
 
   h1{
-    font-family: 'Papyrus', sans-serif;
+    font-family: 'Times New Roman', sans-serif;
   }
 
 }
