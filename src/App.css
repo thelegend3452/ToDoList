@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'custom';
+  src: local('MyCustomFont Regular'), url('../src/fonts/papyrus-webfont.woff') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: 'Times New Roman', Times, serif;
   background-color: rgb(4, 200, 249);
@@ -198,7 +205,7 @@ li .top-row {
   }
 
   h1{
-    font-family: 'Times New Roman', sans-serif;
+    font-family: 'custom', sans-serif;
   }
 
 }
