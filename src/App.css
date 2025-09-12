@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(4, 200, 249);
+  background-color: #008080;
   margin: 0;
   padding: 0;
 }
@@ -15,7 +15,7 @@ body {
 .container {
   max-width: 600px;
   margin: 50px auto;
-  background-color: rgb(4, 200, 249);
+  background-color: #008080;
   padding: 2rem;
   border: 1px solid rgba(255, 255, 255, 0.367);
   border-radius: 12px;
@@ -28,6 +28,10 @@ h1 {
   color: #ffffff;
   margin-bottom: 1.5rem;
   font-family: 'Papyrus', sans-serif;
+}
+.todo-text {
+  font-size: 21px;
+
 }
 
 .rem, .comp {
@@ -42,7 +46,7 @@ h1 {
 
 .rem {
   color: white;
-  background-color: rgb(233, 73, 67);
+  background-color: #a61f44;
   margin-right: 10px;
   padding: 8px;
 }
@@ -53,7 +57,7 @@ h1 {
 
 .comp {
   color: white;
-  background-color: rgb(41, 244, 34);
+  background-color: #00674f;
   padding: 8px;
 }
 
@@ -72,6 +76,12 @@ input[type="text"] {
   backdrop-filter: blur(20px);
   font-size: 16px;
   font-family: 'custom', sans-serif;
+
+}
+
+input[type="checkbox"] {
+  accent-color: #00674f;
+  transform: scale(1.3);
 }
 
 input:focus {
@@ -79,15 +89,17 @@ input:focus {
 }
 
 button {
-  background-color: rgb(4, 200, 249);
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.367);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
-  backdrop-filter: blur(30px);
+  background: rgba(255, 133, 89, 0.75);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 133, 89, 0.3);
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  color: white;
 }
 
 li button {
@@ -96,27 +108,29 @@ li button {
 }
 
 li button:hover {
-  background-color: #c82333;
+  background-color: #a61f44;
   color: white;
 }
 
 .Pbtn, .Nbtn, .Ubtn {
   margin: 3px;
-  background-color: rgb(4, 200, 249);
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.367);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
-  backdrop-filter: blur(30px);
+  background-color: rgba(0, 128, 128, 0.64);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 128, 128, 0.3);
   cursor: pointer;
   font-size: 16px;
   color: white;
   transition: background-color 0.3s;
 }
 
-.Ubtn:focus { background-color: #f62b02; }
-.Pbtn:focus { background-color: #f0a904; }
-.Nbtn:focus { background-color: #298bf3; }
+
+.Ubtn:hover { background-color: #a61f44; }
+.Pbtn:hover { background-color: #ff5349; }
+.Nbtn:hover { background-color: #04c8f9; }
 
 
 ul {
@@ -129,13 +143,15 @@ li {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
-  background-color: rgb(4, 200, 249);
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.367);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
-  backdrop-filter: blur(30px);
+  background: rgba(0, 128, 128, 0.64);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 128, 128, 0.3);
   gap: 0.5rem;
+  transition: all linear 5s; opacity: 1;
 }
 
 li .top-row {
@@ -145,21 +161,77 @@ li .top-row {
   gap: 10px;
 }
 
-.priority {
+.pending{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  background: #a61f44;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 128, 128, 0.3);
+  gap: 0.5rem;
+  transition: all linear 5s; opacity: 1;
+}
+.finished {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    background: #00674f;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 128, 128, 0.3);
+    gap: 0.5rem;
+    transition: all linear 5s; opacity: 1;
+}
+
+.priority.high {
   display: inline-block;
-  background-color: rgb(4, 200, 249);
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.367);
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgb(0,0,0,0.1) ;
-  backdrop-filter: blur(30px);
+  background: #a61f44;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 133, 89, 0.3);
+  font-weight: bold;
+  margin-left: 5px;
+  text-align: center;
+  color:black;
+}
+.priority.moderate {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #ff5349;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 133, 89, 0.3);
+  font-weight: bold;
+  margin-left: 5px;
+  text-align: center;
+  color: black;
+}
+.priority.low {
+  color: black;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #006994;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 133, 89, 0.3);
   font-weight: bold;
   margin-left: 5px;
 }
 
-.priority.high { color: #f62b02; text-align: center; }
-.priority.moderate { color: rgba(199, 148, 0, 0.97); text-align: center; }
-.priority.low { color: #298bf3; text-align: center; }
+
 
 .description {
   font-size: 1rem;
@@ -170,6 +242,16 @@ li .top-row {
 .completed {
   color: black;
   text-decoration: line-through;
+}
+
+h3 {
+  text-align: center;
+  padding: 0;
+}
+
+.blanktext {
+  font-size: 20px;
+  font-family: 'custom', sans-serif;
 }
 
 
@@ -185,6 +267,7 @@ li .top-row {
     margin-bottom: 10px;
 
   }
+
 
   li button {
     margin-left: 0;
@@ -209,6 +292,10 @@ li .top-row {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     backdrop-filter: blur(30px);
   }
+  .Ubtn:focus { background-color: #a61f44; }
+  .Pbtn:focus { background-color: #e94943; }
+  .Nbtn:focus { background-color: #04c8f9; }
+
 
   h1{
     font-family: 'custom', sans-serif;

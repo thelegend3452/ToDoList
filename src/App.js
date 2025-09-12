@@ -81,27 +81,43 @@ const App = () => {
 
 
   const completedCount = todos.filter((task) => task.completed).length;
+  const remaningCount = todos.filter((task ) => !task.completed).length
 
   return (
     <div className="container">
       <h1>TodoList</h1>
       <h2 className="rem">
-        You have <span className="remaning">{todos.length}</span>{" "}
-        {todos.length === 1 ? 'task' : 'tasks'}
+        You have <span className="remaning">{remaningCount}</span>{" "}
+        {remaningCount === 1 ? 'task' : 'tasks'}
       </h2>
       
       <h2 className="comp">
         <span className="task-count">{completedCount}</span> completed
       </h2>
 
+
+
+
       <Todoinput input={input} setInput={setInput} addtask={addtask} description={description} setDescription={setDescription} setPriority={setPriority}/>
-      <Todolist todos={[...todos].sort((a, b) => {
-        if (a.completed  !== b.completed) {
-          return a.completed ? 1: -1;
-        }
-        return PriorityOrder[a.priority] - PriorityOrder[b.priority]
-      })} 
-      deleteTask={deletetask} togglecompleted={togglecompleted} HandlePriority={HandlePriority} />
+      <li className="pending"><h3>Pending</h3></li>
+      {todos.length === 0 ? (
+          <p className="blanktext">You have nothing to do, add a task</p>
+      ) : (
+      <Todolist todos={[...todos].filter(task => !task.completed).sort((a, b) => PriorityOrder[a.priority] - PriorityOrder[b.priority])}
+                deleteTask={deletetask}
+                togglecompleted={togglecompleted}
+                HandlePriority={HandlePriority}
+      />
+      )}
+      <li className="finished"><h3>Completed</h3></li>
+      <Todolist
+          todos={todos.filter(task => task.completed)}
+          deleteTask={deletetask}
+          togglecompleted={togglecompleted}
+          HandlePriority={HandlePriority}
+
+      />
+
     </div>
   );
 };
