@@ -1,0 +1,66 @@
+@media (max-width: 480px) {
+    @font-face {
+        font-family: 'custom';
+        src: local('MyCustomFont Regular'), url('../fonts/papyrus-webfont.woff') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        background-color: #008080;
+    }
+
+    li .top-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+
+    }
+
+    input[type="checkbox"] {
+        border-radius: 50%;
+    }
+
+
+
+    li button {
+        margin-left: 0;
+    }
+
+    button {
+        padding: 0.6rem 1.2rem;
+        font-size: 16px;
+
+    }
+    li button:focus {
+        background-color: #c82333;
+    }
+    .priority {
+        margin-left: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #008080;
+        padding: 2rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        backdrop-filter: blur(30px);
+    }
+    .Ubtn:focus { background-color: #a61f44; }
+    .Pbtn:focus { background-color: #e94943; }
+    .Nbtn:focus { background-color: #04c8f9; }
+
+
+    h1{
+        font-family: 'custom', sans-serif;
+    }
+    ::placeholder {
+        font-family: 'custom', sans-serif;
+    }
+
+}

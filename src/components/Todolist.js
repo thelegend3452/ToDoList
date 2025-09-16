@@ -8,6 +8,7 @@ const Todolist = ({ todos, deleteTask, togglecompleted, HandlePriority }) => {
             >
               <input
                   type="checkbox"
+                  className="checkbox-round"
                   checked={todo.completed}
                   onChange={() => togglecompleted(todo.id)}
 
