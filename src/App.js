@@ -111,13 +111,17 @@ const App = () => {
       />
       )}
       <li className="finished"><h3>Completed</h3></li>
-      <Todolist
+
+          {todos.length > 0 && todos.every(todo => todo.completed) && (
+              <p className="blanktext">You have completed all tasks</p>
+              )}
+          <Todolist
           todos={todos.filter(task => task.completed)}
           deleteTask={deletetask}
           togglecompleted={togglecompleted}
           HandlePriority={HandlePriority}
+          />
 
-      />
 
     </div>
   );
